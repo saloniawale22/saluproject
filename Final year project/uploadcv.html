@@ -93,7 +93,7 @@
       color: white;
     }
 
-    .upload-box button {
+    .upload-box input[type="file"] {
       background-color: #004d40;
       color: white;
       border: none;
@@ -102,9 +102,10 @@
       cursor: pointer;
     }
 
-    .upload-box button:hover {
+    .upload-box input[type="file"]:hover {
       background-color: #00695c;
     }
+    
     /* Footer Section */
         footer {
             background-color: black;
@@ -209,7 +210,7 @@
     <div class="upload-box">
       <h2>Upload your Resume</h2>
       <p>Be sure to include an updated Resume</p>
-      <button>Upload Resume</button>
+      <input type="file" accept=".doc,.docx,.pdf" />
       <p>(DOC, PDF)</p>
     </div>
   </main>
