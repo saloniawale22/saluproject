@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Jagireee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, black, maroon); /* Gradient from black to maroon */
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: linear-gradient(to right, black, maroon); /* Gradient from black to maroon */
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 15px;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .auth-buttons button {
+            background: #a56b6b;
+            border: none;
+            padding: 5px 10px;
+            color: white;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .auth-buttons .register {
+            background: #d27474; /* Lighter red */
+        }
+
+        /* Main Content */
+        main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(to right, black, maroon); /* Gradient from black to maroon */
+        }
+
+        .contact-container {
+            width: 50%;
+        }
+
+        .contact-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            background-color: #a33b3b;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #d08484;
+            color: white;
+            font-size: 1rem;
+        }
+
+        form input::placeholder, form textarea::placeholder {
+            color: #f2e1e1;
+        }
+
+        .contact-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Centered J Image */
+        .center-logo {
+            text-align: center;
+            margin: 10px 0;
+            display: flex;
+        }
+
+        .center-logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Footer Section */
+        .footer {
+            background: #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+
+        /* Social Media Icons on Left */
+        .footer .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer .social-icons img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .footer .social-icons img:hover {
+            transform: scale(1.2);
+            opacity: 0.8;
+        }
+
+        /* Terms, Privacy, and Copyright on Right */
+        .footer .footer-content {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .footer .footer-content a {
+            color:rgb(248, 245, 245);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer .footer-content a:hover {
+            text-decoration: underline;
+            color: #f4d03f;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo"> <!-- Add your logo -->
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="FAQ.html">FAQs</a>
+        </nav>
+        <div class="auth-buttons">
+            <!-- Login Button -->
+            <a href="login.html">
+                <button class="login-btn">Login</button>
+            </a>
+            <!-- Register Button -->
+            <a href="signup.html">
+                <button class="signup-btn">Sign Up</button>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="contact-container">
+            <h2>Contact us</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your name">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email">
+
+                <label for="message">Message:</label>
+                <textarea id="message" rows="5" placeholder="Enter your message"></textarea>
+            </form>
+        </div>
+
+        <!-- Right Side Image -->
+        <div class="contact-image">
+            <img src="contact.png" alt="Contact Illustration">
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="youtube.png" alt="YouTube"></a>
+        </div>
+        <!-- Centered Logo -->
+        <div class="center-logo">
+            <img src="J-logo.png" alt="Centered J Logo">
+        </div>
+        <!-- Terms, Privacy, and Copyright -->
+        <div class="footer-content">
+            <a href="terms.html">Terms</a> | 
+            <a href="privacy.html">Privacy</a> | 
+            <a href="#">© 2024 My Website. All rights reserved.</a>
+        </div>
+    </div>
+</body>
+</html>

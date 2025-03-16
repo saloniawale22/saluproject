@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagireee - Unlock Opportunities</title>
+</head>
+<style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, black, maroon); /* Gradient from black to maroon */
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Header Styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f4d03f;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-btn {
+            background-color: #8e44ad;
+            color: white;
+            transition: background 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #6c3483;
+        }
+
+        .register-btn {
+            background-color: #e67e22;
+            color: white;
+            transition: background 0.3s ease;
+        }
+
+        .register-btn:hover {
+            background-color: #d35400;
+        }
+
+        /* Hero Section Styling */
+        main .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .hero img {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .hero h1 {
+            margin-top: 30px;
+            font-size: 28px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .hero h1 span {
+            color: #f4d03f;
+        }
+        .footer {
+            background: #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+
+        /* Social Media Icons on Left */
+        .footer .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer .social-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .footer .social-icons img:hover {
+            transform: scale(1.2);
+            opacity: 0.8;
+        }
+
+        /* Terms, Privacy, and Copyright on Right */
+        .footer .footer-content {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .footer .footer-content a {
+            color:rgb(248, 245, 245);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer .footer-content a:hover {
+            text-decoration: underline;
+            color: #f4d03f;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo"> <!-- Add your logo image here -->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#Contact us">Contact us</a></li>
+                <li><a href="FAQ.html">FAQs</a></li>
+            </ul>
+        </nav>
+        
+        <div class="auth-buttons">
+            <!-- Login Button -->
+            <a href="index.html">
+                <button class="login-btn">Login</button>
+            </a>
+            <!-- Register Button -->
+            <a href="index.html">
+                <button class="register-btn">Register</button>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <div class="hero">
+            <img src="image.png" alt="Teamwork Illustration"> <!-- Add center image -->
+            <h1>Unlock <span>Opportunities</span> That Match Your Skills</h1>
+        </div>
+    </main>
+
+<!-- Footer Section -->
+<div class="footer">
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+        <a href="#"><img src="facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="youtube.png" alt="YouTube"></a>
+    </div>
+    <!-- Terms, Privacy, and Copyright -->
+    <div class="footer-content">
+        <a href="terms.html">Terms</a> 
+        <a href="#">Privacy</a>  
+        <a href="#">© 2024 My Website. All rights reserved.</a>
+    </div>
+</div>
+</body>
+</html>

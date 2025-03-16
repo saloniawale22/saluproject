@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Jagiree Logo">
+          </div>
+       
+        
+    </header>
+    <style>
+        header img {
+            width: 80px;
+        }
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling with Gradient */
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+            background: linear-gradient(to right, black, maroon); /* Gradient from black to maroon */
+        }
+
+        /* Header Styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            background: linear-gradient(to right, black, maroon); /* Gradient from black to maroon */
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        /* Hamburger Menu Styling */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            background-color: white; /* Changed color for visibility */
+            height: 4px;
+            border-radius: 2px;
+        }
+
+        /* Dropdown Menu Styling with Gradient */
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: linear-gradient(to right, black, maroon); /* Gradient from black to maroon */
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: white; /* White text for contrast */
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: maroon;
+        }
+
+        .menu.show {
+            display: block;
+        }
+
+        /* Main Styling */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            color: #333;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: #f8f8f8;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: maroon;
+            outline: none;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 10px 15px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: maroon;
+        }
+
+        .signup-link {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .signup-link a {
+            color: maroon;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+        /* Footer Section with Social Media Icons */
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+        }
+
+        .footer a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        /* Terms, Privacy, and Copyright on Right */
+        .footer .footer-content {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .footer .footer-content a {
+            color:rgb(248, 245, 245);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer .footer-content a:hover {
+            text-decoration: underline;
+            color: #f4d03f;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="login-container">
+            <h2>Login</h2>
+            
+            <form action="home index.html" method="GET">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <p class="signup-link">
+                    Don't have an account? <a href="signup.html">Sign up</a>
+                </p>
+            </form>
+        </div>
+    </main>
+    <!-- Footer Section -->
+  <div class="footer">
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+    </div>
+    <!-- Terms, Privacy, and Copyright -->
+    <div class="footer-content">
+        <a href="terms.html">Terms</a> 
+        <a href="privacy.html">Privacy</a> 
+        <a href="#">© 2024 My Website. All rights reserved.</a>
+    </div>
+</div>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+
+</script>
+</body>
+</html>

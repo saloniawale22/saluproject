@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, black, maroon); /* Gradient from black to maroon */
+            color: white;
+            text-align: center;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 50px;
+            background: black;
+        }
+        header img {
+            width: 80px;
+
+
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px auto;
+            max-width: 800px;
+        }
+        .option {
+            width: 45%;
+            text-align: center;
+            padding: 20px;
+        }
+        .option img {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        .divider {
+            width: 2px;
+            background: white;
+            height: 200px;
+        }
+        .register-btn {
+            background: #a83232;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .login-text {
+            margin-top: 20px;
+        }
+        footer {
+            background: black;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        .social-icons img {
+            width: 30px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo"> <!-- Add your logo -->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="FAQ.html">FAQs</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="option">
+                <img src="jobseeker.png" alt="Job Seeker">
+                <h2>Job seeker</h2>
+                <button class="register-btn">Register</button>
+            </div>
+            <div class="divider"></div>
+            <div class="option">
+                <img src="employer.png" alt="Employer">
+                <h2>Employer</h2>
+                <button class="register-btn">Register</button>
+            </div>
+        </div>
+        <p class="login-text">Already have an account? <a href="login.html">Login</a></p>
+    </main>
+    
+    <footer>
+        <div class="social-icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="youtube.png" alt="YouTube"></a>
+        </div>
+        <p>Terms | Privacy | &copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.register-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Registration functionality coming soon!');
+            });
+        });
+    </script>
+</body>
+</html>

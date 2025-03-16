@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo"> <!-- Add your logo image here -->
+        </div>
+        <div class="menu" id="menu">
+            <a href="#">Home</a>
+            <a href="#">Jobs</a>
+            <a href="#">Networks</a>
+            <a href="#">Applied</a>
+        </div>
+
+        <div class="right-side">
+            <nav class="go-to-cv">
+                <a href="dashboard.html">Fill Your CV Form</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling with Gradient */
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;  /* Center vertically */
+            align-items: center;  /* Center horizontally */
+            color: white;
+            background: linear-gradient(to right, black, maroon); /* Gradient from black to maroon */
+        }
+
+        .right-side {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar {
+            margin-right: 20px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        /* Header Styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            width: 100%;
+            background: linear-gradient(to right, black, maroon); /* Gradient from black to maroon */
+            box-sizing: border-box;
+        }
+
+        .title {
+            font-size: 48px; /* Increased font size */
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+        
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        /* Position the "Go to CV Form" link to the right */
+        .go-to-cv {
+            margin-right: 20px;
+        }
+
+        .go-to-cv a {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .go-to-cv a:hover {
+            background-color: maroon;
+        }
+        .filters {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: black;
+           
+            width: 100%;
+        }
+        
+        .filters select {
+            padding: 10px; /* Adjust padding to make dropdowns bigger */
+            font-size: 16px;
+            margin: 0 45px; /* Increase margin to create more space between filters */
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        
+    
+        /* Job Category Container Styling */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: center;  /* Center horizontally */
+            align-items: center;  /* Center vertically */
+            width: 100%;
+            min-height: 70vh;  /* Ensure the container takes enough height */
+        }
+
+        .job-category {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            color: #333;
+        }
+
+        .job-category h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .job-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job-list li {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .job-list li:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: black;
+            padding: 20px 50px;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #f4d03f;
+        }
+
+        .social-icons {
+            margin-bottom: 10px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: white;
+            font-size: 18px;
+        }
+
+        .copyright {
+            font-size: 14px;
+        }
+
+        /* Centered J Image */
+        .center-logo {
+            text-align: center;
+            margin: 10px 0;
+            display: flex;
+        }
+
+        .center-logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Footer Section */
+        .footer {
+            background: #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+
+        /* Social Media Icons on Left */
+        .footer .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer .social-icons img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .footer .social-icons img:hover {
+            transform: scale(1.2);
+            opacity: 0.8;
+        }
+
+        /* Terms, Privacy, and Copyright on Right */
+        .footer .footer-content {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .footer .footer-content a {
+            color:rgb(248, 245, 245);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer .footer-content a:hover {
+            text-decoration: underline;
+            color: #f4d03f;
+        }
+
+        /* Mobile Menu */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            background-color: white;
+            height: 4px;
+            border-radius: 2px;
+        }
+
+        /* Dropdown Menu */
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: linear-gradient(to right, black, maroon);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: maroon;
+        }
+
+        .menu.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Job Recommendations</div>
+
+    <div class="filters">
+        <select id="location-filter">
+            <option value="all">All Locations</option>
+            <option value="remote">Remote</option>
+            <option value="lalitpur">Lalitpur</option>
+            <option value="bhakatpur">Bhakatpur</option>
+            <option value="kathamand">Kathamandu</option>
+            <option value="heatauda">Heatauda</option>
+            <option value="pokhara">Pokhara</option>
+        </select>
+
+        <select id="industry-filter">
+            <option value="all">All Industries</option>
+            <option value="it">IT</option>
+            <option value="marketing">Marketing</option>
+            <option value="health">Health</option>
+            <option value="finance">Finance</option>
+        </select>
+
+        <select id="experience-filter">
+            <option value="all">All Experience Levels</option>
+            <option value="entry">Entry Level</option>
+            <option value="mid">Mid Level</option>
+            <option value="senior">Senior Level</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <div class="job-category">
+            <h3>IT Jobs</h3>
+            <ul class="job-list" id="it-jobs"></ul>
+        </div>
+
+        <div class="job-category">
+            <h3>Marketing Jobs</h3>
+            <ul class="job-list" id="marketing-jobs"></ul>
+        </div>
+
+        <div class="job-category">
+            <h3>Health Jobs</h3>
+            <ul class="job-list" id="health-jobs"></ul>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <div class="footer">
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="youtube.png" alt="YouTube"></a>
+        </div>
+        <!-- Centered Logo -->
+        <div class="center-logo">
+            <img src="J-logo.png" alt="Centered J Logo">
+        </div>
+        <!-- Terms, Privacy, and Copyright -->
+        <div class="footer-content">
+            <a href="terms.html">Terms</a> | 
+            <a href="privacy.html">Privacy</a> | 
+            <a href="#">© 2024 My Website. All rights reserved.</a>
+        </div>
+    </div>
+
+    <script>
+        // Toggle the menu visibility on small screens
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+
+        // Sample job data with more jobs
+        const jobs = [
+            { title: 'Software Developer', company: 'Tech Corp', location: 'Remote', industry: 'IT', experience: 'Mid', description: 'Develop cutting-edge software.' },
+            { title: 'Senior Web Developer', company: 'Web Solutions', location: 'Sydney', industry: 'IT', experience: 'Senior', description: 'Build dynamic websites.' },
+            { title: 'Junior Software Engineer', company: 'CodeFactory', location: 'Lalitpur', industry: 'IT', experience: 'Entry', description: 'Assist in software development.' },
+            { title: 'Marketing Manager', company: 'Creative Co', location: 'Sydney', industry: 'Marketing', experience: 'Senior', description: 'Manage marketing campaigns.' },
+            { title: 'Digital Marketing Specialist', company: 'Growth Agency', location: 'Sydney', industry: 'Marketing', experience: 'Mid', description: 'Specialize in SEO and PPC.' },
+            { title: 'Content Strategist', company: 'Content Corp', location: 'Kathamandu', industry: 'Marketing', experience: 'Mid', description: 'Develop content strategies.' },
+            { title: 'Health Worker', company: 'Wellness Ltd', location: 'Melbourne', industry: 'Health', experience: 'Entry', description: 'Assist in healthcare services.' },
+            { title: 'Registered Nurse', company: 'HealthCare Inc.', location: 'Pokhara', industry: 'Health', experience: 'Mid', description: 'Provide patient care in hospitals.' },
+            { title: 'Senior Health Advisor', company: 'Health First', location: 'Remote', industry: 'Health', experience: 'Senior', description: 'Advise on health management.' },
+            { title: 'Senior Data Analyst', company: 'Data Solutions', location: 'Remote', industry: 'IT', experience: 'Senior', description: 'Analyze large datasets to provide insights.' },
+            { title: 'Cloud Architect', company: 'Cloud Innovations', location: 'Sydney', industry: 'IT', experience: 'Senior', description: 'Design cloud computing solutions.' },
+            { title: 'Product Manager', company: 'Tech Innovators', location: 'Lalitpur', industry: 'IT', experience: 'Mid', description: 'Manage product lifecycle.' },
+            { title: 'Mobile App Developer', company: 'MobileTech', location: 'Bhakatpur', industry: 'IT', experience: 'Mid', description: 'Develop mobile applications.' },
+            { title: 'Social Media Manager', company: 'Social Boosters', location: 'Sydney', industry: 'Marketing', experience: 'Mid', description: 'Oversee social media strategy.' },
+            { title: 'SEO Specialist', company: 'Web Growth', location: 'Kathamandu', industry: 'Marketing', experience: 'Entry', description: 'Optimize websites for search engines.' },
+        ];
+
+        // Function to display jobs
+        function displayJobs() {
+            const itJobsContainer = document.getElementById('it-jobs');
+            const marketingJobsContainer = document.getElementById('marketing-jobs');
+            const healthJobsContainer = document.getElementById('health-jobs');
+
+            itJobsContainer.innerHTML = '';
+            marketingJobsContainer.innerHTML = '';
+            healthJobsContainer.innerHTML = '';
+
+            jobs.forEach(job => {
+                const jobElement = document.createElement('li');
+                jobElement.textContent = `${job.title} at ${job.company} (${job.location})`;
+
+                if (job.industry === 'IT') {
+                    itJobsContainer.appendChild(jobElement);
+                } else if (job.industry === 'Marketing') {
+                    marketingJobsContainer.appendChild(jobElement);
+                } else if (job.industry === 'Health') {
+                    healthJobsContainer.appendChild(jobElement);
+                }
+            });
+        }
+
+        displayJobs();
+    </script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #5d1313;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #7c1c1c;
+            height: 60px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav a {
+            margin-left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 140px); /* Adjust for header and footer */
+            padding: 20px;
+        }
+
+        .section {
+            text-align: center;
+            width: 30%;
+        }
+
+        .section img {
+            height: 120px;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .section button {
+            padding: 10px 20px;
+            background-color: #600000;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .section button:hover {
+            background-color: #8a0000;
+        }
+
+        /* Vertical Line Between Sections */
+        .separator {
+            width: 1px;
+            background-color: white;
+            height: 100%;
+            margin: 0 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Hamburger Menu Styling */
+        .hamburger-menu {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #3a0000;
+            border: 1px solid #800000;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            z-index: 1000;
+        }
+
+        .hamburger-menu label, .hamburger-menu input, .hamburger-menu button {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .hamburger-menu input {
+            padding: 5px;
+            width: 100%;
+            border: none;
+        }
+
+        .hamburger-menu button {
+            padding: 10px 20px;
+            background-color: #600000;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger-menu button:hover {
+            background-color: #8a0000;
+        }
+
+        .hamburger-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icons a img {
+            width: 30px;
+            height: 30px;
+        }
+        /* Terms, Privacy, and Copyright on Right */
+        .footer .footer-content {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .footer .footer-content a {
+            color:rgb(248, 245, 245);
+            text-decoration: none;
+        }
+
+        .footer .footer-content a:hover {
+            text-decoration: underline;
+            color: #f4d03f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQs</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <img src="seeker.png" alt="Job Seeker">
+            <p>Job Seeker</p>
+            <button onclick="showHamburgerMenu('seeker')">Register</button>
+        </div>
+
+        <!-- Vertical Line Between Sections -->
+        <div class="separator"></div>
+
+        <div class="section">
+            <img src="employ.png" alt="Employer">
+            <p>Employer</p>
+            <button onclick="showHamburgerMenu('employer')">Register</button>
+        </div>
+    </div>
+
+    <div id="hamburger-menu" class="hidden hamburger-menu">
+        <span class="hamburger-close" onclick="closeHamburgerMenu()">X</span>
+        <h3 id="menu-title">Login</h3>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+
+        <button onclick="loginUser()">Login</button>
+    </div>
+
+    <footer>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #3d0303; color: white;">
+            <!-- Social Media Icons -->
+            <div style="display: flex; gap: 15px; margin-left: 20px;">
+                <a href="#"><img src="fb.png" alt="Facebook" style="width: 30px; height: 30px;"></a>
+                <a href="#"><img src="insta.png" alt="Instagram" style="width: 30px; height: 30px;"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter" style="width: 30px; height: 30px;"></a>
+                <a href="#"><img src="yt.png" alt="YouTube" style="width: 30px; height: 30px;"></a>
+            </div>
+            <!-- Center Logo -->
+            <div style="margin: 0 auto;">
+                <img src="J-logo.png" alt="Logo" style="width: 50px; height: 50px;">
+            </div>
+            <!-- Footer Text -->
+            <div class="footer-content">
+                <a href="terms.html">Terms</a> 
+                <a href="privacy.html">Privacy</a> 
+                <a href="#">© 2024 My Website. All rights reserved.</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showHamburgerMenu(userType) {
+            const menu = document.getElementById('hamburger-menu');
+            const title = document.getElementById('menu-title');
+            menu.classList.remove('hidden');
+            title.textContent = userType === 'seeker' ? 'Job Seeker Login' : 'Employer Login';
+        }
+
+        function closeHamburgerMenu() {
+            const menu = document.getElementById('hamburger-menu');
+            menu.classList.add('hidden');
+        }
+
+        function loginUser() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) {
+                if (document.getElementById('menu-title').textContent === 'Employer Login') {
+                    window.location.href = 'homepage.html'; // Redirect to homepage.html
+                } else {
+                    alert(`Logged in as: ${username}`);
+                    closeHamburgerMenu();
+                }
+            } else {
+                alert('Please fill in both fields.');
+            }
+        }
+    </script>
+</body>
+</html>
